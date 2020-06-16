@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      uri: http://127.0.0.1:1299 #配置服务器
+      label: master              #分支
+      name: application          #github上面名称
+      profile: dev               #环境
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
+  instance:
+    prefer-ip-address: true #显示客户端真实ip

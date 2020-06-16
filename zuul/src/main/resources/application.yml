@@ -1,0 +1,17 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: ZUUL-SERVER
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+zuul:
+  routes:
+    provider.serviceId: TEST-PROVIDER
+    provider.path: /test/**  #匹配指定的路径，资源匹配的路径才会拦截，转发
+    configProvider.serviceId: MICRO-SERVER-DEV
+    configProvider.path: /config-provide/**  #匹配指定的路径，资源匹配的路径才会拦截，转发
+  ignored-services: "*"      #忽略直接使用服务名访问  *忽略所有的
+  prefix: /server            #统一给访问前缀

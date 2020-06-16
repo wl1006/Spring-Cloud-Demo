@@ -1,0 +1,9 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: TEST-PROVIDER   #服务名称，随意取
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka #注册到Eureka的地址
